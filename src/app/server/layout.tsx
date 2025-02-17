@@ -6,11 +6,9 @@ export default function BlogLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
-        <Link href="/">Back Home</Link>
-        <main>{children}</main>
-      </body>
-    </html>
+    <>
+      <Link href="/">Back Home</Link>
+      <main>{children}</main>
+    </>
   );
 }
