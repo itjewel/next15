@@ -7,10 +7,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className="bg-gray-50">
-        dhaka
-        {children}
-      </body>
+      <body className="bg-gray-50">{children}</body>
     </html>
   );
 }
