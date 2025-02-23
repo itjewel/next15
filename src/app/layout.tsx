@@ -1,13 +1,20 @@
+import Link from "next/link";
 import { ReactNode } from "react";
-
-interface RootLayoutProps {
+interface Children {
   children: ReactNode;
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+const Layout = ({ children }: Children) => {
   return (
-    <html lang="en">
-      <body className="bg-gray-50">{children}</body>
+    <html>
+      <body>
+        <Link href="/">Home</Link>
+        <Link href="/about">About</Link>
+        <h2>Root Layout</h2>
+        {children}
+      </body>
     </html>
   );
-}
+};
+
+export default Layout;
