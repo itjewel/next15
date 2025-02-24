@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import TodoList from "./components/TodoList";
 
-const Page = async () => {
+const Page = () => {
   return (
     <div>
       <h2>Todo List</h2>
