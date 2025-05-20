@@ -68,14 +68,14 @@ export const Filter = () => {
   const ticketOptionsOrderBy = useGetOptions(`${Api.TicketOptionsOrderBy}`);
   const { setFilters, resetFilters } = useDataTableContext();
 
+  const [sortFieldValue, setSortFieldValue] = useState<SortFieldOption[]>([]);
+
   type SortFieldOption = AutocompleteOptions & {
     id?: number;
     val?: number;
     orderby?: string;
     sortby?: string;
   };
-
-  const [sortFieldValue, setSortFieldValue] = useState<SortFieldOption[]>([]);
   const [newTicketOptionsOrderBy, setNewTicketOptionsOrderBy] = useState<{
     options: SortOptionFiltering[];
   }>({ options: [] });

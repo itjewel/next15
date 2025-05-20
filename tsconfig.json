@@ -28,7 +28,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/types/app/page.ts",
-    ".next/types/app/layout.tsx"
+    ".next/types/app/layout.tsx",
+    "src/app/editor/Tiptap.tsx"
   ],
   "exclude": ["node_modules"]
 }
