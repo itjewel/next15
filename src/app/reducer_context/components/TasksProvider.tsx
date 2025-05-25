@@ -1,10 +1,16 @@
-import { createContext, useContext, useReducer } from "react";
+"use client";
+import { createContext, useContext, useReducer, ReactNode } from "react";
+import { TaskAction, TaskLIstProps } from "../types";
 
-const TasksContext = createContext(null);
+const TasksContext = createContext<TaskLIstProps[] | null>(null);
 
-const TasksDispatchContext = createContext(null);
+const TasksDispatchContext = createContext<React.Dispatch<null> | null>(null);
 
-export function TasksProvider({ children }) {
+interface TaskProviderProps {
+  children: ReactNode;
+}
+
+export function TasksProvider({ children }: TaskProviderProps) {
   const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
 
   return (
@@ -24,7 +30,7 @@ export function useTasksDispatch() {
   return useContext(TasksDispatchContext);
 }
 
-function tasksReducer(tasks, action) {
+function tasksReducer(tasks: TaskLIstProps[], action: TaskAction) {
   switch (action.type) {
     case "added": {
       return [
@@ -37,7 +43,7 @@ function tasksReducer(tasks, action) {
       ];
     }
     case "changed": {
-      return tasks.map((t) => {
+      return tasks.map((t: TaskLIstProps) => {
         if (t.id === action.task.id) {
           return action.task;
         } else {
@@ -46,10 +52,10 @@ function tasksReducer(tasks, action) {
       });
     }
     case "deleted": {
-      return tasks.filter((t) => t.id !== action.id);
+      return tasks.filter((t: TaskLIstProps) => t.id !== action.id);
     }
     default: {
-      throw Error("Unknown action: " + action.type);
+      throw Error("Unknown action: ");
     }
   }
 }

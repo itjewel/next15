@@ -1,9 +1,12 @@
+"use client";
 import { useState } from "react";
 import { useTasksDispatch } from "./TasksProvider";
+// import { Dispatch } from "../types";
+import { Dispatch } from "../types";
 
 export default function AddTask() {
   const [text, setText] = useState("");
-  const dispatch = useTasksDispatch();
+  const dispatch = useTasksDispatch() as Dispatch | null;
   return (
     <>
       <input
