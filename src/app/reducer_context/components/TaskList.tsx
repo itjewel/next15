@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTasks, useTasksDispatch } from "./TasksContext.js";
+import { useTasks, useTasksDispatch } from "./TasksProvider";
 
 export default function TaskList() {
   const tasks = useTasks();

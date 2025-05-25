@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTasksDispatch } from "./TasksContext.js";
+import { useTasksDispatch } from "./TasksProvider";
 
 export default function AddTask() {
   const [text, setText] = useState("");
