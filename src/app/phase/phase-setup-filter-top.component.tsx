@@ -27,18 +27,6 @@ const activeFilterOptions: ActiveFilterOption[] = [
   { label: "Disabled", data: false },
 ];
 
-const phaseSetupFormInitialValue = {
-  enableReinitialize: true,
-  initialValues: {
-    name: "",
-    useState: {
-      label: "",
-      value: "",
-    },
-    isActive: { label: "Enabled", data: true },
-  },
-};
-
 const initialValues = {
   name: "",
   useState: {
