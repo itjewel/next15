@@ -27,7 +27,9 @@ function Task({ task }: { task: TaskLIstProps }) {
     return null;
   }
   let taskContent;
+  console.log({ ...task }, "global");
   if (isEditing) {
+    console.log({ ...task }, "local");
     taskContent = (
       <>
         <input

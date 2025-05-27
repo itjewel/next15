@@ -1,0 +1,1 @@
+export {FaqCreate} from './faq-create.component'
