@@ -1,17 +1,15 @@
 "use client";
 import { useState } from "react";
 import { useTasksDispatch } from "./TasksProvider";
-// import { Dispatch } from "../types";
 type TaskAction<T> = {
   type: "added";
   id: number;
   text: string;
-  data?: T; // Optional generic data field for flexibility
+  data?: T;
 };
-// import { Dispatch } from "../types";
 type TaskDispatch<T> = (action: TaskAction<T>) => void;
 export default function AddTask<T, D extends TaskDispatch<T>>() {
-  const [text, setText] = useState<string>("");
+  const [text, setText] = useState("");
   const dispatch = useTasksDispatch() as D | null;
   return (
     <>
@@ -23,7 +21,7 @@ export default function AddTask<T, D extends TaskDispatch<T>>() {
       <button
         onClick={() => {
           setText("");
-          dispatch({
+          dispatch!({
             type: "added",
             id: nextId++,
             text: text,

@@ -4,7 +4,9 @@ import { TaskAction, TaskLIstProps } from "../types";
 
 const TasksContext = createContext<TaskLIstProps[] | null>(null);
 
-const TasksDispatchContext = createContext<React.Dispatch<null> | null>(null);
+const TasksDispatchContext = createContext<React.Dispatch<TaskAction> | null>(
+  null
+);
 
 interface TaskProviderProps {
   children: ReactNode;
