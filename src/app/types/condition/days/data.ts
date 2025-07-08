@@ -1,4 +1,4 @@
-function fetchProducts() {
+export function fetchProducts() {
   return [
     {
       data: {
@@ -104,22 +104,3 @@ function fetchProducts() {
     },
   ];
 }
-
-type GenerateType<T> = T extends (
-  ...arg: unknown[]
-) => [{ data: { items: infer R } }]
-  ? R
-  : never;
-
-type PropsType = GenerateType<typeof fetchProducts>;
-const result: PropsType = fetchProducts();
-
-type Items = ReturnType<typeof fetchProducts>[0]["data"]["items"];
-
-// type GetGeneric<T> = T extends (...args: unknown[]) => infer R ? R : never;
-
-// type ReturnTypee = GetGeneric<typeof fetchProducts>;
-
-// const result: ReturnTypee = fetchProducts();
-
-// console.log(result);
