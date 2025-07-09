@@ -105,21 +105,14 @@ function fetchProducts() {
   ];
 }
 
-type GenerateType<T> = T extends (
-  ...arg: unknown[]
-) => [{ data: { items: infer R } }]
-  ? R
-  : never;
+// type GenerateType<T> = T extends (
+//   ...arg: unknown[]
+// ) => [{ data: { items: infer R } }]
+//   ? R
+//   : never;
 
-type PropsType = GenerateType<typeof fetchProducts>;
+type Propse<T> = T extends () => infer R ? R : never;
+type PropsType = Propse<typeof fetchProducts>;
 const result: PropsType = fetchProducts();
 
-type Items = ReturnType<typeof fetchProducts>[0]["data"]["items"];
-
-// type GetGeneric<T> = T extends (...args: unknown[]) => infer R ? R : never;
-
-// type ReturnTypee = GetGeneric<typeof fetchProducts>;
-
-// const result: ReturnTypee = fetchProducts();
-
-// console.log(result);
+// type Items = ReturnType<typeof fetchProducts>[0]["data"]["items"];
