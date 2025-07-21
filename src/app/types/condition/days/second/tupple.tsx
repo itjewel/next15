@@ -1,4 +1,3 @@
-/* ✅ Step 3: Infer Tuple Elements */
 import { fetchProducts } from "../data";
 type GetFirstFromTuple<T> = T extends [infer A, ...any[]] ? A : never;
 
