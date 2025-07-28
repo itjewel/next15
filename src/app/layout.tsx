@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ReactNode } from "react";
-
-// import "./globals.css";
+// import "tailwindcss";
+import "./globals.css";
 
 interface Children {
   children: ReactNode;

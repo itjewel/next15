@@ -11,7 +11,7 @@ import { Skeleton } from "@/features/ui/shadcn/skeleton";
 
 export function CuisinesSkeleton() {
   return (
-    <section className="container mx-auto my-5 min-h-[260px]">
+    <section className="container mx-auto my-5 min-h-[260px] bg-[red]">
       <Carousel className="w-full py-5" opts={{ align: "start" }}>
         <div className="relative mb-5 flex items-center justify-between">
           <h4 className="text-2xl font-semibold">Cuisines</h4>
@@ -26,6 +26,7 @@ export function CuisinesSkeleton() {
               <div className="flex flex-col items-center space-y-2">
                 <div className="relative h-[200px] w-[200px] overflow-hidden rounded-full">
                   <Skeleton className="h-full w-full rounded-xl bg-slate-100" />
+                  Loading
                 </div>
                 <Skeleton className="h-4 w-24 rounded bg-slate-100" />
               </div>
