@@ -1,4 +1,4 @@
-export default function ContactList({ selectedContact, contacts, onSelect }) {
+export default function ContactList({ contacts, onSelect }) {
   return (
     <section className="contact-list">
       <ul>

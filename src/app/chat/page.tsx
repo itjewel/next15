@@ -7,11 +7,7 @@ export default function Page() {
   const [to, setTo] = useState(contacts[0]);
   return (
     <div>
-      <ContactList
-        contacts={contacts}
-        selectedContact={to}
-        onSelect={(pre) => setTo(pre)}
-      />
+      <ContactList contacts={contacts} onSelect={(pre) => setTo(pre)} />
       <Chat key={to.id} contact={to} />
     </div>
   );
